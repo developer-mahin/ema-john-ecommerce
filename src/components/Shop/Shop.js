@@ -1,28 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import { addToDb, getStoredCart } from '../../utilities/fakedb';
+import { addToDb, deleteShoppingCart, getStoredCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css'
+import { Link, useLoaderData } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'; 
 
 const Shop = () => {
-    const [products, setProducts] = useState([])
+    const products = useLoaderData()
     const [cart, setCart] = useState([])
 
-    useEffect(() => {
 
-        fetch('products.json')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-
-    }, [])
+    const handleCartClear = () => {
+        setCart([])
+        deleteShoppingCart()
+    }
 
     useEffect(() => {
 
         const storedCart = getStoredCart();
         const savedProduct = [];
-        for(const id in storedCart){
+        for (const id in storedCart) {
             const addedProduct = products.find(product => product.id === id);
-            if(addedProduct){
+            if (addedProduct) {
                 const quantity = storedCart[id]
                 addedProduct.quantity = quantity
                 savedProduct.push(addedProduct)
@@ -32,13 +33,13 @@ const Shop = () => {
     }, [products])
 
     const handleAddToCart = (selectedProduct) => {
-        let newCart = [] ; 
+        let newCart = [];
         const exists = cart.find(product => product.id === selectedProduct.id)
-        if(!exists){
+        if (!exists) {
             selectedProduct.quantity = 1;
             newCart = [...cart, selectedProduct]
         }
-        else{
+        else {
             const rest = cart.filter(product => product.id !== selectedProduct.id)
             exists.quantity = exists.quantity + 1;
             newCart = [...rest, exists]
@@ -62,10 +63,19 @@ const Shop = () => {
                     }
                 </div>
                 <div className="cart__container">
-                    <Cart cart={cart}></Cart>
+                    <Cart
+                        handleCartClear={handleCartClear}
+                        cart={cart}
+                    >
+                        <Link to='/orders'>
+                            <button className='children__button'>Review Orders 
+                            <FontAwesomeIcon className='children__btn__icon' icon={faArrowRight}></FontAwesomeIcon>
+                            </button>
+                        </Link>
+                    </Cart>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

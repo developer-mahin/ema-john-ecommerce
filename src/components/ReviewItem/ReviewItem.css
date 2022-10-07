@@ -1,0 +1,57 @@
+.review__container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 8px;
+  width: 572px;
+  margin: 11px 0px;
+}
+
+.review__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.review__img img {
+  width: 91px;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.remove__btn {
+  position: absolute;
+  right: 5px;
+}
+
+.remove__btn button {
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 100%;
+  background: rgb(235, 87, 87, 35%);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.remove__btn button:hover {
+  background: rgb(235, 87, 87, 55%);
+}
+
+.trash__icon {
+  color: #eb5757;
+  font-size: 31px;
+}
+
+.review__details p{
+    font-weight: 500;
+}
+
+.review__details span{
+    color: rgba(255, 153, 0, 1);
+    font-weight: 600;
+}

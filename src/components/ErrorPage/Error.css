@@ -1,0 +1,17 @@
+.error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12vw;
+}
+
+.error p {
+  font-size: 25px;
+  font-weight: 500;
+  color: red;
+}
+
+.error p span{
+    font-size: 150px;
+    color: black;
+}
