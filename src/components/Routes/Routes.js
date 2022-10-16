@@ -5,8 +5,10 @@ import About from "../About/About";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Inventory from "../Inventory/Inventory";
 import productsAndCartLoader from "../Loaders/ProductsAndCartLoader";
+import Login from "../Login/Login";
 import Orders from "../Orders/Orders";
 import Shop from "../Shop/Shop";
+import SignUp from "../SignUp/SignUp";
 
 
 const router = createBrowserRouter([
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
                 path: '/about',
                 element: <About></About>
             },
+            {
+                path:'/login',
+                element: <Login></Login>
+            },
+            {
+                path:'/register',
+                element: <SignUp></SignUp>
+            }
         ],
         errorElement: <ErrorPage></ErrorPage>
     }

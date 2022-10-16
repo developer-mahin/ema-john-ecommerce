@@ -31,7 +31,7 @@ const Orders = () => {
                     ></ReviewItem>)
                 }
                 {
-                    cart.length === 0 && <h2>No data available please <Link to='/shop'> Shop now</Link></h2>
+                    cart.length === 0 && <h2 className='shop__now'>No data available please <Link to='/shop'> Shop now</Link></h2>
                 }
             </div>
             <div className='cart__container'>

@@ -1,5 +1,6 @@
-.orders__container{
-    display: grid;
+.shop__now{
+    height: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
