@@ -1,0 +1,10 @@
+.error__massage{
+  color: rgb(243 11 11);
+  font-size: 16px;
+  margin: 10px 0px;
+  font-weight: 500;
+}
+
+.success{
+  color: rgb(15, 216, 15);
+}

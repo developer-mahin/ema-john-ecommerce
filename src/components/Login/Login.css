@@ -1,10 +1,10 @@
 .form__container {
   width: 500px;
-  height: 600px;
   background: #ffffff;
   border: 1px solid #95a0a7;
   border-radius: 8px;
   margin: 10px auto;
+  padding-bottom: 25px;
 }
 
 .form__title {
