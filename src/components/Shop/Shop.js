@@ -9,6 +9,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const Shop = () => {
     const products = useLoaderData()
+
     const [cart, setCart] = useState([])
 
 

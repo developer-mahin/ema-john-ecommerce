@@ -7,8 +7,10 @@ import Inventory from "../Inventory/Inventory";
 import productsAndCartLoader from "../Loaders/ProductsAndCartLoader";
 import Login from "../Login/Login";
 import Orders from "../Orders/Orders";
+import Shipping from "../Shipping/Shipping";
 import Shop from "../Shop/Shop";
 import SignUp from "../SignUp/SignUp";
+import PrivateRoutes from "./PrivateRoutes";
 
 
 const router = createBrowserRouter([
@@ -19,14 +21,14 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 loader: () => {
-                    return fetch('products.json')
+                    return fetch('http://localhost:5000/products')
                 },
                 element: <Shop></Shop>
             },
             {
                 path: '/shop',
                 loader: () => {
-                    return fetch('products.json')
+                    return fetch('http://localhost:5000/products')
                 },
                 element: <Shop></Shop>
             },
@@ -44,12 +46,16 @@ const router = createBrowserRouter([
                 element: <About></About>
             },
             {
-                path:'/login',
+                path: '/login',
                 element: <Login></Login>
             },
             {
-                path:'/register',
+                path: '/register',
                 element: <SignUp></SignUp>
+            },
+            {
+                path: '/shipping',
+                element: <PrivateRoutes><Shipping></Shipping></PrivateRoutes>
             }
         ],
         errorElement: <ErrorPage></ErrorPage>
