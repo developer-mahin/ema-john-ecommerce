@@ -43,3 +43,28 @@
   margin-left: 5px;
   font-size: 17px;
 }
+
+.pagination{
+  width: 500px;
+  margin: auto;
+}
+
+.pagination .selected {
+  background-color: aquamarine;
+  color: black;
+  font-weight: bold;
+}
+
+.pagination button {
+  margin: 0px 5px;
+  padding : 5px 8px;
+  background: cyan;
+  color: black;
+  font-weight: bold;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
